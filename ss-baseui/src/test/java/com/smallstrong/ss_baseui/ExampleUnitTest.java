@@ -1,4 +1,4 @@
-package com.smallstrong.commonutils;
+package com.smallstrong.ss_baseui;
 
 import org.junit.Test;
 

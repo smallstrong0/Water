@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
+import com.smallstrong.ss_common.SSLog;
+
 /**
  * Created by smallstrong on 2017/6/16.
  */
@@ -25,6 +27,7 @@ public class AppContext extends MultiDexApplication {
 
     private void init() {
         AppEnvEnum.getAppEnvEnum(getApplicationContext());//切换环境
+        SSLog.setPrintLog(true);
     }
 
 }
