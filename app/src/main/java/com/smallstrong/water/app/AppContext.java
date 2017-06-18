@@ -11,7 +11,7 @@ import com.smallstrong.ss_common.SSLog;
  */
 
 public class AppContext extends MultiDexApplication {
-
+    private static Context appContext = null;
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -26,8 +26,13 @@ public class AppContext extends MultiDexApplication {
     }
 
     private void init() {
+        appContext = this;
         AppEnvEnum.getAppEnvEnum(getApplicationContext());//切换环境
-        SSLog.setPrintLog(true);
+        SSLog.setPrintLog(true);//log初始化
+    }
+
+    public static Context getAppContext() {
+        return appContext;
     }
 
 }

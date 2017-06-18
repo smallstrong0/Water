@@ -82,44 +82,44 @@ public class SSLog {
         }
     }
 
-    public static void d(Object object, String tag) {
+    public static void d(String tag, Object object) {
         if (printLog) {
             Logger.t(tag).d(object);
         }
     }
 
-    public static void e(String message, String tag) {
+    public static void e(String tag, String message) {
         if (printLog) {
             Logger.t(tag).e(message);
         }
     }
 
 
-    public static void i(String message, String tag) {
+    public static void i(String tag, String message) {
         if (printLog) {
             Logger.t(tag).i(message);
         }
     }
 
-    public static void v(String message, String tag) {
+    public static void v(String tag, String message) {
         if (printLog) {
             Logger.t(tag).v(message);
         }
     }
 
-    public static void w(String message, String tag) {
+    public static void w(String tag, String message) {
         if (printLog) {
             Logger.t(tag).w(message);
         }
     }
 
-    public static void json(String json, String tag) {
+    public static void json(String tag, String json) {
         if (printLog) {
             Logger.t(tag).json(json);
         }
     }
 
-    public static void xml(String xml, String tag) {
+    public static void xml(String tag, String xml) {
         if (printLog) {
             Logger.t(tag).xml(xml);
         }
