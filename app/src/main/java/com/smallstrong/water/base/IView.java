@@ -5,4 +5,6 @@ package com.smallstrong.water.base;
  */
 
 public interface IView {
+    void showLoadingView();
+    void showErrorView(String msg);
 }

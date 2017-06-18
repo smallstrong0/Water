@@ -9,9 +9,9 @@ import java.lang.ref.WeakReference;
  */
 
 
-public abstract class BasePresenter<V extends IView> implements IPresenter,HttpResponseInterface {
+public abstract class BasePresenter<V extends IView> implements IPresenter,IView {
     private WeakReference actReference;
-    protected V mView;
+    public V mView;
 
 
     @Override
@@ -28,6 +28,18 @@ public abstract class BasePresenter<V extends IView> implements IPresenter,HttpR
         }
     }
 
+
+    @Override
+    public void showLoadingView() {
+        mView.showLoadingView();
+    }
+
+
+    @Override
+    public void showErrorView(String msg) {
+        mView.showErrorView(msg);
+
+    }
 
 
 }

@@ -123,4 +123,14 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         super.finish();
         overridePendingTransition(INSTANT_IN, INSTANT_OUT);
     }
+
+    @Override
+    public void showLoadingView() {
+
+    }
+
+    @Override
+    public void showErrorView(String msg) {
+
+    }
 }

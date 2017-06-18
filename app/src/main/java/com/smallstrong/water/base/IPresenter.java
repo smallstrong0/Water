@@ -9,4 +9,6 @@ public interface IPresenter<V extends IView> {
 
     void detachView();
 
+    void onResponse(Object obj);//M层返回数据给P层
+
 }

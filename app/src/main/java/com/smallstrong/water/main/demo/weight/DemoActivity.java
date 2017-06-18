@@ -37,4 +37,6 @@ public class DemoActivity extends BaseActivity<DemoPresenter> implements DemoCon
     public void shaowToast(String str) {
 
     }
+
+
 }

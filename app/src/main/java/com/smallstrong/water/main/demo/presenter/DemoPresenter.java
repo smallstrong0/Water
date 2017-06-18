@@ -9,7 +9,7 @@ import com.smallstrong.water.main.demo.weight.DemoActivity;
 /**
  *
  *@author smallstrong
- *created at 2017/6/18 下午4:54
+ *created at 2017/6/18 下午9:03
  */
  
 
@@ -24,17 +24,13 @@ public class DemoPresenter extends BasePresenter<DemoActivity> implements
 
     @Override
     public void getMeg() {
-        demoModel.loder();
+        demoModel.getData();
+
+    }
+
+
+    @Override
+    public void onResponse(Object obj) {
         mView.shaowToast("haha");
-    }
-
-    @Override
-    public void onResponse(Object result) {
-
-    }
-
-    @Override
-    public void onFailure() {
-
     }
 }

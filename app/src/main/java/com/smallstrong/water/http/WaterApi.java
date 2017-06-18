@@ -13,8 +13,6 @@ import retrofit2.http.Path;
  */
 
 public interface WaterApi {
-
-
     @GET("test")
     Flowable<DemoBean> test(
             @Path("test") String test);

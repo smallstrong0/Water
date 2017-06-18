@@ -5,4 +5,5 @@ package com.smallstrong.water.base;
  */
 
 public interface IModel {
+    void getData();//获取数据
 }

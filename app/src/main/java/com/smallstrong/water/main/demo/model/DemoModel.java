@@ -1,57 +1,34 @@
 package com.smallstrong.water.main.demo.model;
 
 import com.smallstrong.water.base.BaseModel;
+import com.smallstrong.water.base.BaseSubscriber;
 import com.smallstrong.water.bean.DemoBean;
 import com.smallstrong.water.main.demo.presenter.DemoPresenter;
 
-import org.reactivestreams.Subscription;
-
-import io.reactivex.FlowableSubscriber;
-
 
 /**
- *
- *@author smallstrong
- *created at 2017/6/18 下午4:54
+ * @author smallstrong
+ *         created at 2017/6/18 下午9:03
  */
- 
+
 public class DemoModel extends BaseModel {
     DemoPresenter demoPresenter;
-    public DemoModel(DemoPresenter demoPresenter){
+
+    public DemoModel(DemoPresenter demoPresenter) {
         this.demoPresenter = demoPresenter;
     }
 
 
-    public void loder(){
 
+    @Override
+    public void getData() {//Todo 传参数问题
         waterApi.test("")
-                .subscribe(new FlowableSubscriber<DemoBean>() {
-                    @Override
-                    public void onSubscribe(@io.reactivex.annotations.NonNull Subscription s) {
-
-                    }
-
+                .safeSubscribe(new BaseSubscriber<DemoBean>(demoPresenter) {
                     @Override
                     public void onNext(DemoBean demoBean) {
-                        demoPresenter.onResponse(demoBean );
-                    }
-
-                    @Override
-                    public void onError(Throwable t) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
+                        demoPresenter.onResponse(demoBean);
                     }
                 });
 
-
-
-
     }
-
-
-
 }
