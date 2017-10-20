@@ -7,13 +7,10 @@ import com.smallstrong.water.app.AppEnvEnum;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.Cache;
-import okhttp3.CertificatePinner;
-import okhttp3.ConnectionSpec;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -116,11 +113,11 @@ public class Http {
                     File cacheFile = new File(AppContext.getAppContext().getCacheDir(), "cache");
                     Cache cache = new Cache(cacheFile, 1024 * 1024 * 50); //50Mb 缓存的大小
 
-                    OkHttpClient.Builder build = new OkHttpClient.Builder()
-                            .connectionSpecs(Collections.singletonList(ConnectionSpec.MODERN_TLS))
-                            .certificatePinner(new CertificatePinner.Builder()
-                                    .add("www.smallstrong.wang", "test")
-                                    .build());
+                    OkHttpClient.Builder build = new OkHttpClient.Builder();
+//                            .connectionSpecs(Collections.singletonList(ConnectionSpec.MODERN_TLS))
+//                            .certificatePinner(new CertificatePinner.Builder()
+//                                    .add("www.smallstrong.wang", "test")
+//                                    .build());
 
                     if (AppEnvEnum.appEnvEnum == AppEnvEnum.DEBUG) {
                         build.addInterceptor(addLoggerInterceptor());
